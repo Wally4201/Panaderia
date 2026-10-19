@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Almacenista | Panadería Don Chuy</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/almacenista.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-brand">
+      <img src="../IMG/Logo.png" alt="Logo Panadería Don Chuy" class="topbar-logo">
+      <div>
+        <h1>Panadería Don Chuy</h1>
+        <p>Panel de Almacenista</p>
+      </div>
+    </div>
+
+    <a href="../index.html" class="btn-salir">Salir</a>
+  </header>
+
+  <main class="alm-layout">
+    <aside class="sidebar">
+      <h2>Menú</h2>
+      <nav>
+        <a href="#resumen">Resumen</a>
+        <a href="#filtros">Filtros</a>
+        <a href="#inventario">Inventario</a>
+      </nav>
+    </aside>
+
+    <section class="content">
+      <section class="cards" id="resumen">
+        <article class="card">
+          <span>Total productos</span>
+          <strong id="totalProductos">0</strong>
+        </article>
+
+        <article class="card">
+          <span>Stock bajo</span>
+          <strong id="stockBajo">0</strong>
+        </article>
+
+        <article class="card">
+          <span>Stock alto</span>
+          <strong id="stockAlto">0</strong>
+        </article>
+      </section>
+
+      <section class="panel" id="filtros">
+        <h2>Filtros de inventario</h2>
+
+        <div class="botones-filtro">
+          <button onclick="mostrarTodo()">Ver inventario completo</button>
+          <button onclick="filtrarMenor10()">Stock menor a 10</button>
+          <button onclick="filtrarMayor20()">Stock mayor a 20</button>
+        </div>
+      </section>
+
+      <section class="panel" id="inventario">
+        <h2>Inventario general</h2>
+
+        <div class="tabla-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Stock</th>
+                <th>Precio</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody id="tablaInventario"></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="../js/almacenista.js"></script>
+</body>
+</html>

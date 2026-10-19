@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administrador | Panadería Don Chuy</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/administrador.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-brand">
+      <img src="../IMG/Logo.png" alt="Logo Panadería Don Chuy" class="topbar-logo">
+      <div>
+        <h1>Panadería Don Chuy</h1>
+        <p>Panel de Administrador</p>
+      </div>
+    </div>
+
+    <a href="../index.html" class="btn-salir">Salir</a>
+  </header>
+
+  <main class="admin-layout">
+    <aside class="sidebar">
+      <h2>Menú</h2>
+      <nav>
+        <a href="#resumen">Resumen</a>
+        <a href="#agregar">Agregar producto</a>
+        <a href="#inventario">Inventario</a>
+      </nav>
+    </aside>
+
+    <section class="content">
+      <section class="cards" id="resumen">
+        <article class="card">
+          <span>Total productos</span>
+          <strong id="totalProductos">0</strong>
+        </article>
+
+        <article class="card">
+          <span>Stock bajo</span>
+          <strong id="stockBajo">0</strong>
+        </article>
+
+        <article class="card">
+          <span>Valor total</span>
+          <strong id="valorTotal">$0</strong>
+        </article>
+      </section>
+
+      <section class="panel" id="agregar">
+        <h2>Agregar nuevo producto</h2>
+
+        <form id="formProducto" class="form-producto">
+          <div class="campo">
+            <label for="producto">Producto</label>
+            <input type="text" id="producto" placeholder="Ej. Concha" required>
+          </div>
+
+          <div class="campo">
+            <label for="stock">Stock</label>
+            <input type="number" id="stock" placeholder="Ej. 25" required>
+          </div>
+
+          <div class="campo">
+            <label for="precio">Precio</label>
+            <input type="number" id="precio" placeholder="Ej. 18" required>
+          </div>
+
+          <button type="submit" class="btn-accion">Guardar producto</button>
+        </form>
+
+        <p id="mensaje" class="mensaje"></p>
+      </section>
+
+      <section class="panel" id="inventario">
+        <h2>Inventario general</h2>
+
+        <div class="tabla-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Stock</th>
+                <th>Precio</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody id="tablaInventario"></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="../js/administrador.js"></script>
+</body>
+</html>
